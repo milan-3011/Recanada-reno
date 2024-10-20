@@ -1,0 +1,351 @@
+@media (max-width: 1110px){
+    html, body{
+        overflow-x: hidden !important;
+    }
+    #header{
+        position: relative; 
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        height: auto;
+    }
+    .contact-info{
+        display: none;
+    }
+    .logo{
+        width: 70px !important;
+    }
+    .logo-name a h5{
+        font-size: medium !important;
+    }
+    .logo-name a p{
+        font-size: small !important;
+    }
+    .hamburger {							/* *icons*/
+        display: flex !important;
+		margin-right: 10%;
+		margin-bottom: 11px;
+    }
+    .one, .two, .three{
+        height: 3px;
+        background-color: red;
+        margin: 4px 0;
+        transition: 0.4s;
+        position: absolute;
+    }
+    .one{
+        width: 30px;
+        transform: translate(0, -10px);
+    }
+    .openmenu .one{
+        transform: rotate(45deg) translate(0, 0);
+        background-color: #5A76FE;
+    }
+    .two{
+        width: 20px;
+        margin-right: 5px;
+    }
+    .openmenu .two{
+        width: 0;
+        opacity: 0;
+    }
+    .three{
+        width: 30px;
+        transform: translate(0, 10px);
+    }
+    .openmenu .three{
+        transform: rotate(-45deg) translate(0, 0);
+        background-color: #5A76FE;
+        transform-origin: center;
+    }
+    .manuBar{
+        display: flex;
+        justify-content: end;
+        padding: 0 !important;
+    }
+    .navbar-links {
+        position: absolute;
+        top: 90%;
+        right: -30%;
+        background-color: rgb(27, 27, 27);
+        width: 30%;
+        height: 100vh;
+    }
+
+    
+    ul{
+        padding-left: 0 !important;
+    }
+    .navbar-links li{
+        list-style: none;
+        padding: 10%;
+        font-size: 20px;
+        font-weight: bold;
+        border-bottom: 1px solid gray;
+    }
+    .navbar-links a{
+        text-decoration: none;
+        color: white;
+    }
+    .navbar-links a:active{
+        color: skyblue;
+    }
+
+    
+
+    .first-img{
+       height: 80%;
+    }
+    .first-img img{
+        object-fit: fill;
+    }
+    .trans-space{
+        font-size: 35px !important;
+    }
+
+    .services P {
+        font-size: 25px;
+    }
+
+    .planing h1, .why-us h4{
+        font-size: 35px;
+    }
+    .planing p, .why-us p{
+        font-size: 25px;
+        text-align: justify;
+    }
+
+    .lets{
+        font-size: 60px;
+    }
+
+    .leftFooter{
+        width: 40%;
+        margin-left: 3%;
+    }
+    .leftFooter img{
+        width: 80px !important;
+        height: auto;
+        margin-right: 10%;
+    }
+
+    .rightFooter h1{
+        font-size: 60px;
+    }
+
+    .logo-n h5{
+        font-size: 25px !important;
+    }
+    .logo-n p{
+        font-size: medium !important;
+    }
+    .centFooter i{
+        padding: 0;
+        width: 80px;
+        font-size: medium;
+        height: 40px;
+    } 
+    
+}
+
+@media (max-width: 600px){
+    header{
+        background-color: rgb(27, 27, 27);
+    }
+    .logo{
+        width: 50px !important;
+    }
+    .logo-name a h5{
+        font-size: 15px !important;
+    }
+    .logo-name a p{
+        font-size: 12px !important;
+    }
+    .one, .two, .three{
+        height: 2px;
+    }
+    .navbar-links {
+        right: -60%;
+        width: 60%;
+    }
+
+
+    
+
+    .main-dia{
+        height:max-content;
+        display: block;
+    }
+    .first-img{
+        position: relative;
+        right: 0%;
+        width: 90%;
+        margin: auto;
+        margin-top: 10%;
+    }
+    .first-img img{
+        width: 100%;
+    }
+    .sec-line{
+        margin-top: 5%;
+        width: 100%;
+    }
+    .trans-space{
+        font-size: 30px !important;
+        text-align: left !important;
+    }
+    .sec-line h4{
+        width: 90%;
+        font-size: medium;
+        text-align: justify;
+    }
+    .sec-line button{
+        font-size: small;
+    }
+    .sec-line button:hover{
+        transform: initial;
+    }
+
+
+    .who-we-are{
+        width: 100%;
+        height: max-content;
+        margin-left: 0%;
+        margin-top: 10%;
+        padding: 10% 5%;
+    }
+    .who-we-are h4, .services h4{
+        font-size: 30px;
+        text-decoration: underline;
+        text-underline-offset: 5px;
+    }
+    .who-we-are p{
+        font-size: medium;
+        text-align: justify;
+    }
+    
+
+
+    .services h4 {
+        font-size: 30px;
+        text-decoration-color: red;
+    }
+    .services P{
+        margin: 5%;
+        font-size: medium;
+        line-height: 20px;
+    }
+
+    .images .img-div{
+        width: 300px;
+        height: 300px;
+    }
+    .images img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        scale: 1.3;
+    }
+    .img-div:hover img{
+        opacity: 1;
+    }
+    .img-div:hover h1{
+        display: none;
+    }
+
+
+    .planing h1{
+        margin-bottom: 5%;
+        font-size: 30px;
+        text-underline-offset: 8px;
+        line-height: 40px;
+    }
+    .planing p{
+        font-size: 20px;
+    }
+
+
+    .why-us{
+        overflow: hidden;
+    }
+    .why-us h4{
+        font-size: 30px;
+        text-align: justify;
+        margin-left: 4%;
+    }
+    .why-us p{
+        margin: 0 2% 0 4%;
+        text-align: justify;
+        font-size: 20px;
+        line-height: 30px;
+    }
+
+
+
+    .que{
+        padding: 0%;
+        margin-top: 10%;
+        overflow: hidden;
+        padding-bottom: 10%;
+    }
+    .que h3{
+        padding: 2% 5%;
+        font-size: medium;
+        border-radius: 100px;
+    }
+    .lets{
+        
+        font-size: 40px;
+        font-weight: 600;
+    }
+    .que a{
+        text-decoration: none;
+    }
+    hr{
+        height: 2px !important;
+        opacity: 1 !important;
+    }
+
+
+
+
+    .mainfooter{
+        flex-direction: column;
+    }
+    .logo-n h5{
+        font-size: 20px !important;
+    }
+    .logo-n p{
+        font-size: small !important;
+    }
+    .leftFooter{
+        width: 90%;
+    }
+    .leftText p{
+        margin-top: 5%;
+        font-weight: 100;
+        color: rgb(192, 192, 192);
+        width: 100%;
+        font-size: small;
+    }
+    .centFooter{
+        width: 90%;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .rightFooter{
+        width: 100%;
+        margin-top: 10%;
+    }
+    .rightFooter h1{
+        font-size: 40px;
+        text-align: center;
+    }
+    .Copyright{
+        font-size: 10px;
+    }
+    
+    
+    
+}
