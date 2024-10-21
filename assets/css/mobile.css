@@ -24,7 +24,7 @@
     }
     .hamburger {							/* *icons*/
         display: flex !important;
-		margin-right: 10%;
+		margin-right: 80%;
 		margin-bottom: 11px;
     }
     .one, .two, .three{
@@ -295,9 +295,8 @@
         border-radius: 100px;
     }
     .lets{
-        
         font-size: 40px;
-        font-weight: 600;
+        font-weight: bold;
     }
     .que a{
         text-decoration: none;
@@ -346,6 +345,13 @@
         font-size: 10px;
     }
     
-    
-    
+}
+
+@media (max-width: 360px) {
+    .hamburger{
+        margin-right: 50%;
+    }
+    .lets{
+        font-size: 35px;
+    }
 }

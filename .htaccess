@@ -1,0 +1,7 @@
+RewriteEngine On
+RewriteBase /
+
+# Redirect clean URLs to their corresponding HTML pages
+RewriteRule ^about/?$ /Pages/aboutUs.html [L]
+RewriteRule ^services/?$ /Pages/services.html [L]
+RewriteRule ^contact/?$ /Pages/contactUs.html [L]

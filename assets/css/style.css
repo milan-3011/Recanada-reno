@@ -208,7 +208,7 @@ header{
 }
 
 /* what we do */
-.page3 {
+.srvs {
     margin-top: 10%;
     text-align: center;
 }
@@ -344,7 +344,7 @@ header{
 .lets{
     margin-top: 2%;
     font-size: 80px;
-    font-weight: 600;
+    font-weight: bolder;
     color: transparent;
     background: linear-gradient(90deg, #5A76FE 0%, #FD02FD 100%);
     -webkit-background-clip: text;
