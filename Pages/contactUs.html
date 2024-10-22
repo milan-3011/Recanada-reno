@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us : ReCanada Renovation</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/mobile.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="shortcut icon" href="/assets/images/LOGO.png" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Locomotive Scroll CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+</head>
+<body>
+    
+    <div id="main" data-scroll-container>
+        <header id="header"></header>
+        <div class="drop">
+            <h1>DROP US A NOTE</h1>
+            <P>Get in touch with us to explore new opportunities, share ideas, or discuss how we can help bring your renovation vision to life.</P>
+        </div>
+        <hr>
+        
+        <div class="hello-form">
+            <div class="hello">
+                <h1>"Greetings! Let's connect <br>and collaborate!"</h1>
+                <br>
+                <div class="pTags">
+                    <h4>Contact Information</h4>
+                    <h5><i class="fa-solid fa-phone"></i> &nbsp;+1 (437) 818-9650</h5>
+                    <h5><a href="mailto:info@recanadareno.ca"><i class="fa-solid fa-envelope"></i> &nbsp;info@recanadareno.ca</a></h5>
+                </div>
+                
+            </div>
+            <div class="forms">
+                <h1>Send us a message</h1>
+                <form id="form" method="POST">
+                    <!-- <input type="hidden" name="access_key" value="a4f63cde-f485-40bf-97e9-5004da00ba80">
+                    <input type="hidden" name="subject" value="New Submission from Web3Forms">
+                    <input type="checkbox" name="botcheck" id="" style="display: none;"> -->
+                    
+                    <input type="text" name="name" placeholder="Name*" required >
+                    <input type="email" name="email" placeholder="Email*" required>
+                    <br>
+                    
+                    <input type="number" name="phone" placeholder="Phone*" required>
+                    <input type="text" name="subject" placeholder="Subject*" required>
+                    <br>
+                    
+                    <textarea name="message" placeholder="Message*" maxlength="50" minlength="0" required></textarea>
+                    <button type="submit">Drop a Message</button>
+
+                    <div id="result"></div>
+                </form>
+            </div>
+        </div>
+        <div id="footer"></div>
+
+    </div>
+
+
+    <!-- JavaScript Libraries -->
+    <!-- Jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <!-- Locomotive Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
+    
+    <!-- GSAP and ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- Custom JS -->
+    <script src="/assets/js/main.js"></script>
+</body>
+</html>

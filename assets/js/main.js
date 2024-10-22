@@ -38,8 +38,6 @@ $(document).ready(function() {
   scrollwithLoco();
 });
 
-
-// Function to set up Locomotive Scroll and GSAP ScrollTrigger
 function scrollwithLoco() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -70,7 +68,6 @@ function scrollwithLoco() {
   ScrollTrigger.refresh();
 }
 
-// Timeline animations function
 function timelinecodes() {
   var tl = gsap.timeline();
 
@@ -99,7 +96,6 @@ function timelinecodes() {
   });
 }
 
-// Scroll-triggered animations function
 function scrolltricodes() {
   const isTab = window.innerWidth < 1110;
 
@@ -243,14 +239,46 @@ function scrolltricodes() {
   });
 }
 
-function urlHandel(){
-  if (window.location.pathname === "/about/") {
-    window.location.href = "/Pages/aboutUs.html";
-  } else if (window.location.pathname === "/services/") {
-    window.location.href = "/Pages/services.html";
-  } else if (window.location.pathname === "/contact/") {
-    window.location.href = "/Pages/contactUs.html";
-  }
+function contactform(){
+  const form = document.getElementById('form');
+  const result = document.getElementById('result');
+
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+    result.innerHTML = "Please wait...";
+    result.style.display = "block";  
+      
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: json
+    })
+    .then(async (response) => {
+      let json = await response.json();
+      if (response.status === 200) {
+        result.innerHTML = "<p style='color: green; margin-top: 10px; font-size: 16px;'><i class='fa-regular fa-circle-check fa-2xl'></i> Your request was successfully submitted ! We will get in touch soon.</p>";
+      } else {
+        console.log(response);
+        result.innerHTML = "<p style='color: red;'>There was an error. Please try again.</p>";
+      }
+    })
+    .catch(error => {
+      console.log(error);
+      result.innerHTML = "<p style='color: red;'>Something went wrong!</p>";
+    })
+    .then(function() {
+      form.reset();
+      setTimeout(() => {
+        result.style.display = "none";
+      }, 3000);
+    });
+  });
 }
-urlHandel();
+contactform();
 
