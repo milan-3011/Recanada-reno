@@ -348,6 +348,7 @@ header{
     color: transparent;
     background: linear-gradient(90deg, #5A76FE 0%, #FD02FD 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     cursor: pointer;
 }
 .que a{
@@ -492,12 +493,12 @@ footer hr{
 }
   
 .loader {
-    border: 5px solid red;
+    border-bottom: 5px solid red;
     border-top: 5px solid #005aaf5d;
     border-radius: 50%;
     width: 120px;
     height: 120px;
-    animation: spin 1s linear infinite;
+    animation: spin 0.5s linear infinite;
 }
 
 @keyframes spin {
@@ -505,9 +506,4 @@ footer hr{
     100% { transform: rotate(360deg); }
 }
 
-#preloader.hidden {
-    opacity: 0;
-    pointer-events: none; 
-    transition: opacity 0.5s ease-out; 
-}
   

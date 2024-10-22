@@ -1,7 +1,8 @@
+const preloader = document.getElementById('preloader');
 window.addEventListener('load', () => {
-  const preloader = document.getElementById('preloader');
-  preloader.classList.add('hidden');
+  preloader.style.display ="none";
 });
+
 
 $(document).ready(function() {
   $("#header").load("/General/header.html", function() {
@@ -41,7 +42,7 @@ $(document).ready(function() {
 });
 
 $(function(){
-  $("#footer").load("/general/footer.html");
+  $("#footer").load("/General/footer.html");
 });
 
 function scrollwithLoco() {
