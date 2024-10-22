@@ -1,3 +1,8 @@
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('preloader');
+  preloader.classList.add('hidden');
+});
+
 $(document).ready(function() {
   $("#header").load("/General/header.html", function() {
     timelinecodes(); 
@@ -36,9 +41,7 @@ $(document).ready(function() {
 });
 
 $(function(){
-  $("#footer").load("/general/footer.html", function(){
-    console.log("fooooooooter")
-  })
+  $("#footer").load("/general/footer.html");
 });
 
 function scrollwithLoco() {
