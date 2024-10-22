@@ -42,7 +42,9 @@ $(document).ready(function() {
 });
 
 $(function(){
-  $("#footer").load("/General/footer.html");
+  $("#footer").load("/General/footer.html", function(){
+    console.log("foooter")
+  });
 });
 
 function scrollwithLoco() {
