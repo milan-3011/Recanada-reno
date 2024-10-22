@@ -1,3 +1,53 @@
+$(document).ready(function() {
+  $("#header").load("/General/header.html", function() {
+    timelinecodes(); // Call animations related to header and main content
+
+    if ($(window).width() < 1110) {
+      // Handle mobile-specific GSAP menu animations here
+      let hamburgers = $(".hamburger");
+
+      hamburgers.each(function() {
+        let tl = gsap.timeline({ paused: true });
+
+        tl.to(".navbar-links", {
+          right: 0,
+          duration: 0.6,
+          ease: "power2.inOut"
+        })
+        .from(".navbar-links li", {
+          x: 150,
+          duration: 0.3,
+          stagger: 0.3,
+          opacity: 0,
+        });
+
+        $(this).on("click", function() {
+          $(this).toggleClass("openmenu");
+          if ($(this).hasClass("openmenu")) {
+            tl.play();  
+          } else {
+            tl.reverse();
+          }
+        });
+      });
+    }
+
+    // Load footer and then initialize scrolltricodes and GSAP
+    $("#footer").load("/General/footer.html", function() {
+      locoScroll.update();  // Update locomotive scroll
+
+      // Initialize footer animations after it's loaded
+      scrolltricodes(); // Call GSAP scroll animations after both header and footer are loaded
+
+      // Refresh ScrollTrigger to ensure everything is tracked properly
+      ScrollTrigger.refresh();
+    });
+  });
+
+  scrollwithLoco(); // Initialize locomotive scroll
+});
+
+
 function scrollwithLoco() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -27,47 +77,6 @@ function scrollwithLoco() {
   ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
   ScrollTrigger.refresh();
 }
-$(document).ready(function() {
-  $("#header").load("/General/header.html", function() {
-    timelinecodes(); 
-    scrolltricodes(); 
-
-    if ($(window).width() < 1110) {
-      let hamburgers = $(".hamburger");
-
-      hamburgers.each(function() {
-        let tl = gsap.timeline({ paused: true });
-
-        tl.to(".navbar-links", {
-          right: 0,
-          duration: 0.6,
-          ease: "power2.inOut"
-        })
-        .from(".navbar-links li", {
-          x: 150,
-          duration: 0.3,
-          stagger: 0.3,
-          opacity: 0,
-        });
-
-        $(this).on("click", function() {
-          $(this).toggleClass("openmenu");
-          if ($(this).hasClass("openmenu")) {
-            tl.play();  
-          } else {
-            tl.reverse();
-          }
-        });
-      });
-    }
-
-    $("#footer").load("/General/footer.html", function() {
-      locoScroll.update(); 
-    });
-  });
-
-  scrollwithLoco();
-});
 
 function timelinecodes() {
   var tl = gsap.timeline();
