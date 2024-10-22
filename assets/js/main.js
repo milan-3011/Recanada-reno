@@ -1,9 +1,9 @@
 $(document).ready(function() {
   $("#header").load("/General/header.html", function() {
-    timelinecodes(); // Call animations related to header and main content
+    timelinecodes(); 
+    scrolltricodes(); 
 
     if ($(window).width() < 1110) {
-      // Handle mobile-specific GSAP menu animations here
       let hamburgers = $(".hamburger");
 
       hamburgers.each(function() {
@@ -31,22 +31,15 @@ $(document).ready(function() {
         });
       });
     }
-
-    // Load footer and then initialize scrolltricodes and GSAP
-    $("#footer").load("/General/footer.html", function() {
-      locoScroll.update();  // Update locomotive scroll
-
-      // Initialize footer animations after it's loaded
-      scrolltricodes(); // Call GSAP scroll animations after both header and footer are loaded
-
-      // Refresh ScrollTrigger to ensure everything is tracked properly
-      ScrollTrigger.refresh();
-    });
   });
-
-  scrollwithLoco(); // Initialize locomotive scroll
+  scrollwithLoco();
 });
 
+$(function(){
+  $("#footer").load("/general/footer.html", function(){
+    console.log("fooooooooter")
+  })
+});
 
 function scrollwithLoco() {
   gsap.registerPlugin(ScrollTrigger);
