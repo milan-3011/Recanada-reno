@@ -5,7 +5,7 @@ window.addEventListener('load', () => {
 
 
 $(document).ready(function() {
-  $("#header").load("/General/header.html", function() {
+  $("#header").load("/general/header.html", function() {
     timelinecodes(); 
     scrolltricodes(); 
 
@@ -42,7 +42,7 @@ $(document).ready(function() {
 });
 
 $(function(){
-  $("#footer").load("/General/footer.html", function(){
+  $("#footer").load("/general/footer.html", function(){
     console.log("foooter")
   });
 });
