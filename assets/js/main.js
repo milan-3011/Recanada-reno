@@ -3,6 +3,7 @@ window.addEventListener('load', () => {
   preloader.style.display ="none";
 });
 
+
 $(function() { 
   $("#footer").load("/general/footer.html");
 });
@@ -71,6 +72,68 @@ function timelinecodes() {
       stagger: 0.3,
     });
   }
+  if($(".about").length){
+    const isTab = window.innerWidth < 1110;
+    tl.from(".aboutImg img", {
+      y: "100%",
+      opacity: 0,
+      duration: 0.5,
+    })
+    tl.from(".aboutImg h1", {
+      y: "100%",
+      opacity: 0,
+      duration: 0.5,
+    })
+    if (isTab) {
+      tl.from(".ourmission", {
+        y: "100%",
+        opacity: 0,
+        duration: 0.5,
+      });
+      tl.from(".para h4, .para p, .mission-img", {
+        y: "100%",
+        opacity: 0,
+        duration: 0.5,
+        stagger:0.3,
+      });
+    }
+  }
+  if($(".appDev").length){
+    const isTab = window.innerWidth < 1110;
+    tl.from(".appH1 h1, .small-para p", {
+      y: "100%",
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.3
+    })
+    tl.from(".pngImage, .app-info ul li", {
+      y: "-100%",
+      opacity: 0,
+      duration: 0.5, 
+      stagger:0.3
+    })
+  }
+  // if($(".drop").length){
+  //   tl.from(".drop h1", {
+  //     x: "-100%",
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     stagger: 0.3
+  //   })
+  //   tl.from(".drop p", {
+  //     x: "100%",
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     stagger: 0.3
+  //   })
+  //   tl.from(".hello, .forms", {
+  //     y: "100%",
+  //     opacity: 0,
+  //     duration: 0.5,
+  //     stagger: 0.3
+  //   })
+    
+  // }
   
 }
 
@@ -90,7 +153,6 @@ function scrolltricodes() {
       scrub: 2, 
     }
   });
-
   const srvs = isTab ? "top 100%" : "top 70%";
 
   if($(".main-dia").length){
@@ -122,7 +184,6 @@ function scrolltricodes() {
       }
     });
 
-    // Animate the bottom 3 images later
     gsap.from(".images div:nth-child(n+4)", { 
       y: 100, 
       opacity: 0, 
@@ -168,79 +229,258 @@ function scrolltricodes() {
     });
   }
 
-  gsap.from(".que a h3", {
-    scale: 1.3,
-    opacity: 0, 
-    duration: 2.5,
-    ease: "bounce.out",
-    scrollTrigger: {
-      trigger: ".page6",
-      start: "top 60%",
-      end: "top 50%",
-      scrub: 2,
+  if($(".about").length){
+    
+    if (!isTab){
+      gsap.from(".ourmission", {
+        y: "100%", 
+        opacity: 0, 
+        duration: 1, 
+        ease: "ease-in-out", 
+        scrollTrigger: {
+          trigger: ".page2", 
+          start: "top 50%",
+          end: "top 50%",
+          scrub: 3, 
+        }
+      });
+      gsap.from(".para h4, .para p", {
+        y: 100, 
+        opacity: 0, 
+        duration: 1, 
+        ease: "ease-in-out", 
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".page2", 
+          start: "top 50%",
+          end: "top 50%",
+          scrub: 3, 
+        }
+      });
+      gsap.from(".mission-img", {
+        x: 100, 
+        opacity: 0, 
+        duration: 1, 
+        ease: "ease-in-out", 
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: ".page2", 
+          start: "top 50%",
+          end: "top 50%",
+          scrub: 3, 
+        }
+      });
     }
-  });
+    
+    const vis = isTab ? "top 100%" : "top 50%";
+    gsap.from(".vision", {
+      x: "100%", 
+      opacity: 0, 
+      duration: 1, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page3", 
+        start: vis,
+        end: "top 90%",
+        scrub: 3, 
+      }
+    });
+    const vis2 = isTab ? "top 90%" : "top 50%";
+    gsap.from(".vision h1, .vision p", {
+      y: "100%", 
+      opacity: 0, 
+      duration: 1, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page3", 
+        start: vis2,
+        end: "top 90%",
+        scrub: 3, 
+      }
+    });
+    gsap.from(".team", {
+      x: "-100%", 
+      opacity: 0, 
+      duration: 1, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page4", 
+        start: vis,
+        end: "top 90%",
+        scrub: 3, 
+      }
+    });
+    gsap.from(".team h1, .team p", {
+      y: "100%", 
+      opacity: 0, 
+      duration: 1, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page4", 
+        start: vis2,
+        end: "top 90%",
+        scrub: 3, 
+      }
+    });
+    gsap.from(".promise", {
+      x: "100%", 
+      opacity: 0, 
+      duration: 1, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page5", 
+        start: vis,
+        end: "top 90%",
+        scrub: 3, 
+      }
+    });
+    gsap.from(".promise h1, .promise p", {
+      y: "100%", 
+      opacity: 0, 
+      duration: 1, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page5", 
+        start: vis2,
+        end: "top 90%",
+        scrub: 3, 
+      }
+    });
+  }
 
-  const queP = isTab ? "top 110%" : "top 60%";
+  // Services Page
 
-  gsap.from(".que p", {
-    y: 100, 
-    opacity: 0, 
-    duration: 0.5, 
-    ease: "ease-in-out", 
-    stagger: 0.3,
-    scrollTrigger: {
-      trigger: ".page6",
-      start: queP,
-      scrub: 2,
-    }
-  });
+  if($(".appDev").length){
+    const solv = isTab ? "top 80%" : "top 50%";
+
+    gsap.from(".solutions, .solutions h1, .solutions p", {
+      y: 100, 
+      opacity: 0, 
+      duration: 0.5, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page2", 
+        start: solv,
+        end: "top 50%",
+      }
+    });
+  }
+
+
+  
+
+  if($(".que ").length){
+    const queP = isTab ? "top 110%" : "top 60%";
+    gsap.from(".que a h3", {
+      scale: 1.3,
+      opacity: 0, 
+      duration: 2.5,
+      ease: "bounce.out",
+      scrollTrigger: {
+        trigger: ".page6",
+        start: "top 60%",
+        end: "top 50%",
+        scrub: 2,
+      }
+    });
+    gsap.from(".que p", {
+      y: 100, 
+      opacity: 0, 
+      duration: 0.5, 
+      ease: "ease-in-out", 
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".page6",
+        start: queP,
+        scrub: 2,
+      }
+    });
+  }
+  
 
 }
 
 function contactform(){
-  if($(".form").length){
-    console.log("mil gya");
+  if($(".drop").length){
+  
     const form = document.getElementById('form');
     const result = document.getElementById('result');
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const formData = new FormData(form);
-      const object = Object.fromEntries(formData);
-      const json = JSON.stringify(object);
-      result.innerHTML = "Please wait...";
-      result.style.display = "block";  
+    // form.addEventListener('submit', function(e) {
+    //   e.preventDefault();
+    //   const formData = new FormData(form);
+    //   const object = Object.fromEntries(formData);
+    //   const json = JSON.stringify(object);
+    //   result.innerHTML = "Please wait...";
+    //   result.style.display = "block";  
         
-      fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: json
-      })
-      .then(async (response) => {
-        let json = await response.json();
-        if (response.status === 200) {
-          result.innerHTML = "<p style='color: green; margin-top: 10px; font-size: 16px;'><i class='fa-regular fa-circle-check fa-2xl'></i> Your request was successfully submitted ! We will get in touch soon.</p>";
-        } else {
-          console.log(response);
-          result.innerHTML = "<p style='color: red;'>There was an error. Please try again.</p>";
-        }
-      })
-      .catch(error => {
-        console.log(error);
-        result.innerHTML = "<p style='color: red;'>Something went wrong!</p>";
-      })
-      .then(function() {
-        form.reset();
-        setTimeout(() => {
-          result.style.display = "none";
-        }, 3000);
-      });
-    });
+    //   fetch('https://api.web3forms.com/submit', {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       'Accept': 'application/json'
+    //     },
+    //     body: json
+    //   })
+    //   .then(async (response) => {
+    //     let json = await response.json();
+    //     if (response.status === 200) {
+    //       result.innerHTML = "<p style='color: green; margin-top: 10px; font-size: 16px;'><i class='fa-regular fa-circle-check fa-2xl'></i> Your request was successfully submitted ! We will get in touch soon.</p>";
+    //     } else {
+    //       console.log(response);
+    //       result.innerHTML = "<p style='color: red;'>There was an error. Please try again.</p>";
+    //     }
+    //   })
+    //   .catch(error => {
+    //     console.log(error);
+    //     result.innerHTML = "<p style='color: red;'>Something went wrong!</p>";
+    //   })
+    //   .then(function() {
+    //     form.reset();
+    //     setTimeout(() => {
+    //       result.style.display = "none";
+    //     }, 3000);
+    //   });
+    // });
   }
 }
 contactform();
 
+document.addEventListener('DOMContentLoaded', function() {
+  if($(".drop").length){
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "ca",
+        utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        showSelectedDialCode: true,
+    });
+
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const formData = new FormData(form);
+        const data = {};
+
+        formData.forEach((value, key) => {
+            data[key] = value;
+        });
+
+        const phoneNumber = phoneInput.getNumber(); 
+        const dialCode = phoneInput.getSelectedCountryData().dialCode; 
+        data.phone = `+${dialCode} ${phoneNumber.replace(`+${dialCode}`, '')}`;
+
+        console.log(data);
+
+        document.getElementById('result').innerText = 'Form submitted! Check the console for data.';
+    });
+  }
+});

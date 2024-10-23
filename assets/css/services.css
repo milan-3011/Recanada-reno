@@ -7,22 +7,14 @@
     height: 0.5px !important;
     opacity: 0.5 !important;
 }
+.appH1{
+    width: 40%;
+    overflow: hidden;
+    height: fit-content;
+}
 .appDev h1{
     font-weight: 700;
     font-size: 60px;
-    width: 40%;
-    animation: scroll-left 1.2s forwards ease-in-out;
-    opacity: 0;
-}
-@keyframes scroll-left{
-    0%{
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-    100%{
-        opacity: 1;
-        transform: translateX(0%);
-    }
 }
 .right-para{
     width: 70%;
@@ -33,6 +25,7 @@
 .small-para{
     display: flex;
     margin-bottom: 5%;
+    overflow: hidden;
 }
 .small-para p{
     margin: 0 2%;
@@ -51,12 +44,16 @@
     position: relative;
 }
 
-
+.imgHome{
+    position: absolute;
+    top: 40%;
+    overflow: hidden;
+    height: fit-content;
+}
 .pngImage{
     width: 400px;
     height: 300px;
-    position: absolute;
-    top: 40%;
+    
 }
 
 .solutions{
@@ -179,6 +176,7 @@
 
 
 @media (max-width: 1110px){
+   
     .appDev h1 {
         font-size: 50px;
         margin-top: 10%;
@@ -217,6 +215,9 @@
 } 
 
 @media (max-width: 600px){
+    .appH1{
+        width: 90%;
+    }
     .appDev{
         flex-direction: column;
     }

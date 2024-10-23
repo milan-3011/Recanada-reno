@@ -28,14 +28,15 @@
 
     <div id="preloader">
         <div class="loader"></div>
-      </div>
-    <div id="main" data-scroll-container>
-        <header id="header"></header>
+    </div>
+    <header id="header"></header>
+    
+    <div id="main" >
         
         <div class="page1">
             <div class="appDev">
-                <h1>OUR <br>SERVICES</h1>
-                <img class="pngImage" src="assets/images/pngwing.com.png" alt="Renovation Image">
+                <div class="appH1"><h1>OUR <br>SERVICES</h1></div>
+                <div class="imgHome"><img class="pngImage" src="assets/images/pngwing.com.png" alt="Renovation Image"></div>
                 <div class="right-para">
                     <div class="small-para">
                         <p class="oneP">At ReCanada Renovation Services INC., we are driven by innovation, offering state-of-the-art Renovation and 
@@ -75,7 +76,7 @@
             <div class="main-services">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class='SubTopics'>
+                        <div class='SubTopics' id="home">
                             <div class="txt">
                                 <h2>Home Renovation</h2>
                                 <br />
@@ -92,11 +93,11 @@
                   
                 <div class="container-fluid">
                     <div class="row">
-                      <div class='SubTopicTWO'>
+                      <div class='SubTopicTWO' >
                         <div class="imgPotteryTWO">
                         <img src="assets/images/newKitchen.jpg" alt="Image" />
                         </div>
-                        <div class="txtTWO">
+                        <div class="txtTWO" id="kitchen">
                             <h2>Kitchen Remodeling</h2>
                             <br />
                             <p>"Our kitchen remodeling services will give you a space that’s not only beautiful but also more 
@@ -109,7 +110,7 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        <div class='SubTopics'>
+                        <div class='SubTopics' id="bathroom">
                             <div class="txt">
                                 <h2>Bathroom Remodeling</h2>
                                 <br />
@@ -126,7 +127,7 @@
                   
                 <div class="container-fluid">
                     <div class="row">
-                      <div class='SubTopicTWO'>
+                      <div class='SubTopicTWO' id="basement">
                         <div class="imgPotteryTWO">
                         <img src="assets/images/newBasement.jpg" alt="Image" />
                         </div>
@@ -143,7 +144,7 @@
 
                 <div class="container-fluid">
                     <div class="row">
-                        <div class='SubTopics'>
+                        <div class='SubTopics' id="flooring">
                             <div class="txt">
                                 <h2>Flooring Installation</h2>
                                 <br />
@@ -160,7 +161,7 @@
                   
                 <div class="container-fluid">
                     <div class="row">
-                      <div class='SubTopicTWO'>
+                      <div class='SubTopicTWO' id="interior">
                         <div class="imgPotteryTWO">
                         <img src="assets/images/newRoom.jpg" alt="Image" />
                         </div>
@@ -187,17 +188,13 @@
             </div>
         </div>
 
-        <div id="footer" class="page7 ftr"></div>
-
     </div>
-
+    <div id="footer" class="page7 ftr"></div>
 
     <!-- JavaScript Libraries -->
     <!-- Jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- Locomotive Scroll -->
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
-    
+   
     <!-- GSAP and ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>

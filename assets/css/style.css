@@ -5,13 +5,16 @@ body{
     background-color: black !important;
     color: white !important;
     overflow-x: hidden;
+    
+}
+html{
+    scroll-behavior: smooth !important;
 }
 
 #main {
-    min-height: 100vh; 
-    height: auto;      
     position: relative;
-    background-color: black;    
+    background-color: black !important;    
+    z-index: 10;
 }
 
 .horizontal{
@@ -48,13 +51,14 @@ header{
     display: flex;
     padding-left: 5% !important;
     overflow: hidden;
+    align-items: start;
 }
 .logo{
     width: 100px;
     height: auto;
 }
 .logo-name{
-    margin-left: 10px;
+    margin-left: 20px;
     align-self: center !important;
     overflow: hidden;
 }
@@ -89,9 +93,14 @@ header{
         margin-right: 100px;
         font-size: medium;
         margin-top: 10px;
+        background-color: black;
+        border-radius: 20px;
+        padding-left: 0 !important;
+        padding: 1% 0;
     }
+
     .nav-menu-item{
-        margin:0 25px;
+        margin: 0 25px;
         text-decoration: none;
         position: relative;
         color: white;
@@ -166,8 +175,7 @@ header{
     border-radius: 30px;
     background: rgb(5,92,173);
     background: linear-gradient(90deg, rgba(5,92,173,0.9024859943977591) 0%, rgba(255,0,0,1) 100%);
-    margin-right: 5%;
-    margin-top: 2%;
+    margin: 3%;
     font-size: large;
     font-weight: 500;
     transition: all 0.2s ease-in-out;
@@ -346,7 +354,7 @@ header{
     font-size: 80px;
     font-weight: bolder;
     color: transparent;
-    background: linear-gradient(90deg, #5A76FE 0%, #FD02FD 100%);
+    background: linear-gradient(90deg, red 0%, blue 100%);
     -webkit-background-clip: text;
     background-clip: text;
     cursor: pointer;
@@ -360,8 +368,11 @@ hr{
 }
 
 
-
-footer{
+#footer{
+    z-index: 0 !important;
+    position: sticky !important;
+    bottom: 0;
+    width: 100%;
     width: 100%;
     background-color: #005aaf5d;
 }
@@ -406,7 +417,7 @@ footer{
     height: 60px;
 }
 .centFooter i:hover{
-    background: linear-gradient(90deg, #5a75fedc 0%, #fd02fdc0 100%);
+    background: linear-gradient(90deg, rgba(255,0,0,1) 0%, rgba(5,92,173,0.9024859943977591) 100%);
     color: black;
     font-weight: 700;
 }
@@ -471,12 +482,6 @@ footer hr{
 }
 
 
-.c-scrollbar_thumb{
-    background-color: white !important;
-    height: 100px !important;
-    z-index: 1000 !important;
-}
-
 /* Preloader Styles */
 #preloader {
     position: fixed;
@@ -506,4 +511,14 @@ footer hr{
     100% { transform: rotate(360deg); }
 }
 
-  
+::-webkit-scrollbar{
+    width: 5px;
+}
+::-webkit-scrollbar-track{
+    background-color: black;
+}
+::-webkit-scrollbar-thumb{
+    background-color: rgba(255, 255, 255, 0.607);
+    border-radius: 20px;
+    height: 15%;
+}
