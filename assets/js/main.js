@@ -3,7 +3,11 @@ window.addEventListener('load', () => {
   preloader.style.display ="none";
 });
 
-
+$(function(){
+  $("#footer").load("/general/footer.html", function(){
+    console.log("foooter")
+  });
+});
 $(document).ready(function() {
   $("#header").load("/general/header.html", function() {
     timelinecodes(); 
@@ -41,11 +45,7 @@ $(document).ready(function() {
   scrollwithLoco();
 });
 
-$(function(){
-  $("#footer").load("/general/footer.html", function(){
-    console.log("foooter")
-  });
-});
+
 
 function scrollwithLoco() {
   gsap.registerPlugin(ScrollTrigger);
