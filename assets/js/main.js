@@ -4,12 +4,9 @@ window.addEventListener('load', () => {
 });
 
 $(function() { 
-  $("#footer").load("/general/footer.html", function() {
-    console.log("footer loaded");
-    locoScroll.update(); // Recalculate Locomotive Scroll after footer loads
-    ScrollTrigger.refresh(); // Refresh GSAP ScrollTrigger
-  });
+  $("#footer").load("/general/footer.html");
 });
+
 $(document).ready(function() {
   $("#header").load("/general/header.html", function() {
     timelinecodes(); 
@@ -44,41 +41,7 @@ $(document).ready(function() {
       });
     }
   });
-  scrollwithLoco();
 });
-
-
-
-function scrollwithLoco() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  const locoScroll = new LocomotiveScroll({
-    el: document.querySelector("#main"),
-    smooth: true,
-    smoothMobile: true,
-    reloadOnContextChange: true // Ensures reload on dynamic content
-  });
-
-  locoScroll.on("scroll", ScrollTrigger.update);
-
-  ScrollTrigger.scrollerProxy("#main", {
-    scrollTop(value) {
-      return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-    },
-    getBoundingClientRect() {
-      return {
-        top: 0, 
-        left: 0, 
-        width: window.innerWidth, 
-        height: window.innerHeight
-      };
-    },
-    pinType: document.querySelector("#main").style.transform ? "transform" : "fixed"
-  });
-
-  ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-  ScrollTrigger.refresh();
-}
 
 function timelinecodes() {
   var tl = gsap.timeline();
@@ -121,8 +84,7 @@ function scrolltricodes() {
     ease: "ease-in-out", 
     stagger: 0.3,
     scrollTrigger: {
-      trigger: ".page1", 
-      scroller: "#main",
+      trigger: ".page1",
       start: "top -10%",
       end: "top 50%",
       scrub: 2, 
@@ -140,7 +102,6 @@ function scrolltricodes() {
       stagger: 0.3,
       scrollTrigger: {
         trigger: ".page3", 
-        scroller: "#main",
         start: srvs,
         end: "top 50%",
         scrub: 5, 
@@ -155,7 +116,6 @@ function scrolltricodes() {
       stagger: 0.5, 
       scrollTrigger: {
         trigger: ".page3", 
-        scroller: "#main",
         start: "top 30%", 
         end: "top 30%",
         scrub: 5,
@@ -171,7 +131,6 @@ function scrolltricodes() {
       stagger: 0.5, 
       scrollTrigger: {
         trigger: ".page3", 
-        scroller: "#main",
         start: "top -10%",
         end: "top 30%", 
         scrub: 5,
@@ -186,7 +145,6 @@ function scrolltricodes() {
       stagger: 0.3,
       scrollTrigger: {
         trigger: ".page4", 
-        scroller: "#main",
         start: "top 50%",
         end: "top 50%",
         scrub: 3, 
@@ -203,7 +161,6 @@ function scrolltricodes() {
       stagger: 0.3,
       scrollTrigger: {
         trigger: ".page5", 
-        scroller: "#main",
         start: whyus,
         end: "top 50%",
         scrub: 2, 
@@ -217,8 +174,7 @@ function scrolltricodes() {
     duration: 2.5,
     ease: "bounce.out",
     scrollTrigger: {
-      trigger: ".page6", 
-      scroller: "#main",
+      trigger: ".page6",
       start: "top 60%",
       end: "top 50%",
       scrub: 2,
@@ -234,8 +190,7 @@ function scrolltricodes() {
     ease: "ease-in-out", 
     stagger: 0.3,
     scrollTrigger: {
-      trigger: ".page6", 
-      scroller: "#main",
+      trigger: ".page6",
       start: queP,
       scrub: 2,
     }
