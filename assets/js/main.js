@@ -238,19 +238,6 @@ function scrolltricodes() {
     }
   });
 
-  gsap.from(".ftr", {
-    y: 100,
-    opacity: 0, 
-    duration: 0.5,
-    ease: "ease-in-out",
-    scrollTrigger: {
-      trigger: ".ftr", 
-      scroller: "#main",
-      start: "top 100%",
-      end: "top 90%",
-      scrub: 2,
-    }
-  });
 }
 
 function contactform(){
