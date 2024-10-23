@@ -3,9 +3,11 @@ window.addEventListener('load', () => {
   preloader.style.display ="none";
 });
 
-$(function(){
-  $("#footer").load("/general/footer.html", function(){
-    console.log("foooter")
+$(function() { 
+  $("#footer").load("/general/footer.html", function() {
+    console.log("footer loaded");
+    locoScroll.update(); // Recalculate Locomotive Scroll after footer loads
+    ScrollTrigger.refresh(); // Refresh GSAP ScrollTrigger
   });
 });
 $(document).ready(function() {
@@ -52,8 +54,9 @@ function scrollwithLoco() {
 
   const locoScroll = new LocomotiveScroll({
     el: document.querySelector("#main"),
-    smooth: false,
-    smoothMobile: false
+    smooth: true,
+    smoothMobile: true,
+    reloadOnContextChange: true // Ensures reload on dynamic content
   });
 
   locoScroll.on("scroll", ScrollTrigger.update);
