@@ -20,6 +20,10 @@ html{
 .horizontal{
     color: #055cadd7;
 }
+.nav-table a{
+    color: white;
+    text-decoration: none;
+}
 .nav-table tr td i{
     color: #055cadd7;
     margin: 0 8px;  
@@ -73,10 +77,10 @@ header{
     font-weight: bold;
 }
 .logo-name a h5{
-    font-size: 27px;
+    font-size: 25px;
 }
 .logo-name a p{
-    font-size: 20px;
+    font-size: 18px;
 }
 .hamburger {					/* *Icons*/
     display: none;
@@ -85,7 +89,6 @@ header{
     padding: 15px;
 }
 @media (min-width: 1110px){
-
     .navbar-links{
         display: flex;
         list-style: none;
