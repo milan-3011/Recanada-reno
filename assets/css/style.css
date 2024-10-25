@@ -409,6 +409,10 @@ hr{
     display: flex;
     flex-direction: column;
 }
+.centFooter a{
+    text-decoration: none;
+    color: white;
+}
 .centFooter i{
     padding: 5%;
     font-size: x-large;
