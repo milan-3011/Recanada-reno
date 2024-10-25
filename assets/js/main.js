@@ -113,27 +113,27 @@ function timelinecodes() {
       stagger:0.3
     })
   }
-  // if($(".drop").length){
-  //   tl.from(".drop h1", {
-  //     x: "-100%",
-  //     opacity: 0,
-  //     duration: 0.5,
-  //     stagger: 0.3
-  //   })
-  //   tl.from(".drop p", {
-  //     x: "100%",
-  //     opacity: 0,
-  //     duration: 0.5,
-  //     stagger: 0.3
-  //   })
-  //   tl.from(".hello, .forms", {
-  //     y: "100%",
-  //     opacity: 0,
-  //     duration: 0.5,
-  //     stagger: 0.3
-  //   })
+  if($(".drop").length){
+    tl.from(".drop h1", {
+      x: "-100%",
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.3
+    })
+    tl.from(".drop p", {
+      x: "100%",
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.3
+    })
+    tl.from(".hello, .forms", {
+      y: "100%",
+      opacity: 0,
+      duration: 0.5,
+      stagger: 0.3
+    })
     
-  // }
+  }
   
 }
 
