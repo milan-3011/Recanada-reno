@@ -409,78 +409,59 @@ function scrolltricodes() {
 
 function contactform(){
   if($(".drop").length){
-  
-    const form = document.getElementById('form');
-    const result = document.getElementById('result');
 
-    // form.addEventListener('submit', function(e) {
-    //   e.preventDefault();
-    //   const formData = new FormData(form);
-    //   const object = Object.fromEntries(formData);
-    //   const json = JSON.stringify(object);
-    //   result.innerHTML = "Please wait...";
-    //   result.style.display = "block";  
-        
-    //   fetch('https://api.web3forms.com/submit', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json',
-    //       'Accept': 'application/json'
-    //     },
-    //     body: json
-    //   })
-    //   .then(async (response) => {
-    //     let json = await response.json();
-    //     if (response.status === 200) {
-    //       result.innerHTML = "<p style='color: green; margin-top: 10px; font-size: 16px;'><i class='fa-regular fa-circle-check fa-2xl'></i> Your request was successfully submitted ! We will get in touch soon.</p>";
-    //     } else {
-    //       console.log(response);
-    //       result.innerHTML = "<p style='color: red;'>There was an error. Please try again.</p>";
-    //     }
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //     result.innerHTML = "<p style='color: red;'>Something went wrong!</p>";
-    //   })
-    //   .then(function() {
-    //     form.reset();
-    //     setTimeout(() => {
-    //       result.style.display = "none";
-    //     }, 3000);
-    //   });
-    // });
-  }
-}
-contactform();
-
-document.addEventListener('DOMContentLoaded', function() {
-  if($(".drop").length){
     const phoneInputField = document.querySelector("#phone");
     const phoneInput = window.intlTelInput(phoneInputField, {
         initialCountry: "ca",
         utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
         showSelectedDialCode: true,
     });
-
+  
     const form = document.getElementById('form');
+    const result = document.getElementById('result');
 
-    form.addEventListener('submit', function(event) {
-        event.preventDefault(); 
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
 
-        const formData = new FormData(form);
-        const data = {};
+      const phoneNumber = phoneInput.getNumber(); 
+      const dialCode = phoneInput.getSelectedCountryData().dialCode; 
+      object.phone = `+${dialCode} ${phoneNumber.replace(`+${dialCode}`, '')}`;
 
-        formData.forEach((value, key) => {
-            data[key] = value;
-        });
-
-        const phoneNumber = phoneInput.getNumber(); 
-        const dialCode = phoneInput.getSelectedCountryData().dialCode; 
-        data.phone = `+${dialCode} ${phoneNumber.replace(`+${dialCode}`, '')}`;
-
-        console.log(data);
-
-        document.getElementById('result').innerText = 'Form submitted! Check the console for data.';
+      const json = JSON.stringify(object);
+      result.innerHTML = "Please wait...";
+      result.style.display = "block";  
+        
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status === 200) {
+          result.innerHTML = "<p style='color: green; margin-top: 10px; font-size: 16px;'><i class='fa-regular fa-circle-check fa-2xl'></i> Your request was successfully submitted ! We will get in touch soon.</p>";
+        } else {
+          console.log(response);
+          result.innerHTML = "<p style='color: red;'>There was an error. Please try again.</p>";
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        result.innerHTML = "<p style='color: red;'>Something went wrong!</p>";
+      })
+      .then(function() {
+        form.reset();
+        setTimeout(() => {
+          result.style.display = "none";
+        }, 3000);
+      });
     });
   }
-});
+}
+contactform();
+
