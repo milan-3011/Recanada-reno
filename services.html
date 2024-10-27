@@ -6,23 +6,28 @@
     <title>Services : ReCanada Renovation</title>
     
     <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/mobile.css">
+    <link rel="preload" href="assets/css/new.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/bootstrap.css" as="style" onload="this.rel='stylesheet'">
+    <link rel="stylesheet" href="assets/css/new.css">
     <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/services.css">
-    <link rel="shortcut icon" href="assets/images/LOGO.png" type="image/x-icon">
-
-    <!-- Google Fonts -->
+    <link rel="shortcut icon" href="assets/images/LOGO.webp" type="image/x-icon">
+    
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preload Google Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" as="style" onload="this.rel='stylesheet'">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
-
+    
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    
     <!-- Locomotive Scroll CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
+
 </head>
 <body>
 
@@ -36,7 +41,7 @@
         <div class="page1">
             <div class="appDev">
                 <div class="appH1"><h1>OUR <br>SERVICES</h1></div>
-                <div class="imgHome"><img class="pngImage" src="assets/images/pngwing.com.png" alt="Renovation Image"></div>
+                <div class="imgHome"><img class="pngImage" src="assets/images/homePNG.webp" alt="Renovation Image" loading="lazy"></div>
                 <div class="right-para">
                     <div class="small-para">
                         <p class="oneP">At ReCanada Renovation Services INC., we are driven by innovation, offering state-of-the-art Renovation and 
@@ -70,7 +75,7 @@
                     attention to detail, while adhering to your budget and schedule?</p>
                 <p>ReCanada Renovation Services INC. is here for you! Our experienced and approachable team is 
                     committed to completing the job correctly from the start. Whether your project is large or small, we’re ready to assist.</p>
-                <p><a href="contactUs.html">Contact Us</a> today to turn your renovation vision into reality!</p>
+                <p><a href="contact.html">Contact Us</a> today to turn your renovation vision into reality!</p>
             </div>
         </div>
 
@@ -87,7 +92,7 @@
                                     consultation to execution, ensuring every detail meets your expectations."</p>
                             </div>
                             <div class="imgPottery">
-                                <img src="assets/images/home.jpg" alt="Home" />
+                                <img src="assets/images/home.webp" alt="Home" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -97,7 +102,7 @@
                     <div class="row">
                       <div class='SubTopicTWO' >
                         <div class="imgPotteryTWO">
-                        <img src="assets/images/newKitchen.jpg" alt="Image" />
+                        <img src="assets/images/newKitchen.webp" alt="Kitchen" loading="lazy" />
                         </div>
                         <div class="txtTWO" id="kitchen">
                             <h2>Kitchen Remodeling</h2>
@@ -121,7 +126,7 @@
                                     atmosphere."</p>
                             </div>
                             <div class="imgPottery">
-                                <img src="assets/images/newBathroom.jpg" alt="Home" />
+                                <img src="assets/images/newbathroom.webp" alt="Bathroom" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -131,7 +136,7 @@
                     <div class="row">
                       <div class='SubTopicTWO' id="basement">
                         <div class="imgPotteryTWO">
-                        <img src="assets/images/newBasement.jpg" alt="Image" />
+                        <img src="assets/images/newBasement.webp" alt="Basement" loading="lazy" />
                         </div>
                         <div class="txtTWO">
                             <h2>Basement Renovation</h2>
@@ -155,7 +160,7 @@
                                     durability, and comfort."</p>
                             </div>
                             <div class="imgPottery">
-                                <img src="assets/images/flooring (2).jpg" alt="Home" />
+                                <img src="assets/images/flooring (2).webp" alt="Flooring" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -165,7 +170,7 @@
                     <div class="row">
                       <div class='SubTopicTWO' id="interior">
                         <div class="imgPotteryTWO">
-                        <img src="assets/images/newRoom.jpg" alt="Image" />
+                        <img src="assets/images/newRoom.webp" alt="Interior" loading="lazy" />
                         </div>
                         <div class="txtTWO">
                             <h2>Interior Renovation</h2>
@@ -189,7 +194,7 @@
                                      your new staircase becomes a stunning focal point in your home."</p>
                             </div>
                             <div class="imgPottery">
-                                <img src="assets/images/stairs.jpg" alt="Home" />
+                                <img src="assets/images/stairs.webp" alt="Stair" loading="lazy" />
                             </div>
                         </div>
                     </div>
@@ -198,7 +203,7 @@
                     <div class="row">
                       <div class='SubTopicTWO' id="cabinet">
                         <div class="imgPotteryTWO">
-                        <img src="assets/images/cabinet.jpg" alt="Image" />
+                        <img src="assets/images/cabinet.webp" alt="Cabinet" loading="lazy" />
                         </div>
                         <div class="txtTWO">
                             <h2>Cabinet Remodeling</h2>
@@ -218,7 +223,7 @@
 
         <div class="page6 qtin">
             <div class="que">
-                <a href="#"><h3>HAVE A PROJECT IN MIND ?</h3> </a>
+                <a href="contact.html"><h3>HAVE A PROJECT IN MIND ?</h3> </a>
                 <p class="lets">You have Dreams. <br> We have Ideas.</p>
             </div>
         </div>
